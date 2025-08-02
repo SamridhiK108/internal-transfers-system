@@ -6,11 +6,11 @@ This is a backend system written in Go that facilitates internal financial trans
 
 
 
-\- Create accounts
+\- Create accounts  
 
-\- Check account balances
+\- Check account balances  
 
-\- Transfer funds between accounts
+\- Transfer funds between accounts  
 
 
 
@@ -26,13 +26,13 @@ PostgreSQL is used for data persistence.
 
 
 
-\- Account creation with initial balance
+\- Account creation with initial balance  
 
-\- Real-time balance querying
+\- Real-time balance querying  
 
-\- Secure and consistent transaction processing
+\- Secure and consistent transaction processing  
 
-\- Error handling for invalid inputs and transaction failures
+\- Error handling for invalid inputs and transaction failures  
 
 
 
@@ -44,13 +44,13 @@ PostgreSQL is used for data persistence.
 
 
 
-\- Go 1.22+
+\- Go 1.22+  
 
-\- PostgreSQL
+\- PostgreSQL  
 
-\- Gorilla Mux
+\- Gorilla Mux  
 
-\- curl (for testing HTTP endpoints)
+\- curl (for testing HTTP endpoints)  
 
 
 
@@ -152,11 +152,7 @@ This starts the HTTP server on port 8080.
 
 ```bash
 
-curl -X POST http://localhost:8080/accounts ^
-
-&nbsp;-H "Content-Type: application/json" ^
-
-&nbsp;-d "{\\"account\_id\\": 123, \\"balance\\": \\"500.75\\"}"
+curl -X POST http://localhost:8080/accounts -H "Content-Type: application/json" -d "{\\"account\_id\\": 123, \\"balance\\": \\"500.75\\"}"
 
 ```
 
@@ -180,11 +176,7 @@ curl http://localhost:8080/accounts/123
 
 ```bash
 
-curl -X POST http://localhost:8080/transactions ^
-
-&nbsp;-H "Content-Type: application/json" ^
-
-&nbsp;-d "{\\"source\_account\_id\\":123,\\"destination\_account\_id\\":456,\\"amount\\":\\"100.25\\"}"
+curl -X POST http://localhost:8080/transactions -H "Content-Type: application/json" -d "{\\"source\_account\_id\\":123,\\"destination\_account\_id\\":456,\\"amount\\":\\"100.25\\"}"
 
 ```
 
@@ -198,15 +190,15 @@ curl -X POST http://localhost:8080/transactions ^
 
 
 
-\- All accounts use the same currency.
+\- All accounts use the same currency  
 
-\- No authentication or authorization is implemented.
+\- No authentication or authorization is implemented  
 
-\- Transaction amounts and balances are stored as strings for precision.
+\- Transaction amounts and balances are stored as strings for precision  
 
-\- Overdrafts are not allowed.
+\- Overdrafts are not allowed  
 
-\- Account IDs must be unique.
+\- Account IDs must be unique  
 
 
 
@@ -218,11 +210,11 @@ curl -X POST http://localhost:8080/transactions ^
 
 
 
-\- Tables are created automatically when the application starts.
+\- Tables are created automatically when the application starts  
 
-\- All responses are returned in JSON format.
+\- All responses are returned in JSON format  
 
-\- The code handles common error scenarios such as insufficient balance or missing accounts.
+\- The code handles common error scenarios such as insufficient balance or missing accounts  
 
 
 
